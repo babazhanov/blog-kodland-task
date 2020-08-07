@@ -25,13 +25,18 @@
 </head>
 <body>
 
-<nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo" style="white-space: nowrap">Блог</a>
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo left" style="white-space: nowrap">
+            <img src="{% static 'images/logo.png' %}" style="width: 180px; height: 50px; margin-top: 10px;"/>
+            <span style="color: black; position: absolute;">Блог</span>
+        </a>
+        <a class="btn right blue darken-1" style="margin-top: 12px;" href="#!">+ Добавить статью</a>
       <ul class="right hide-on-med-and-down">
           <li><a href="/admin">Вход</a></li>
       </ul>
 
-      <ul id="nav-mobile" class="sidenav">
+      <!--ul id="nav-mobile" class="sidenav">
 
           <li><div class="user-view">
           <div class="nav-background-class">
@@ -48,7 +53,7 @@
         <li><a class="waves-effect" href="/admin">Вход</a></li>
 
       </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a-->
     </div>
 </nav>
 
@@ -64,7 +69,7 @@
 (function($){
   $(function(){
 
-    $('.sidenav').sidenav();
+    //$('.sidenav').sidenav();
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
