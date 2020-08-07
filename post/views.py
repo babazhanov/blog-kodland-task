@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView, CreateView
+from django.views.generic import DetailView
 from django.views.generic.list import ListView
 
 from post.forms import PostForm
@@ -17,7 +17,7 @@ class PostDetailView(DetailView):
 
 def add_post(request):
     if request.method == "POST":
-        form = PostForm(request.POST, request.FILES)
+        form = PostForm(request.POST)
         if form.is_valid():
             cleaned_data = form.cleaned_data
             post = Post()

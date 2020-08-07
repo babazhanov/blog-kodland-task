@@ -1,5 +1,7 @@
-from django.db import models
 from ckeditor.fields import RichTextField
+from django.db import models
+
+from ajaximage.fields import AjaxImageField
 
 
 class Post(models.Model):
@@ -12,5 +14,8 @@ class Post(models.Model):
 
     title = models.CharField(max_length=256)
     content = RichTextField()
-    image = models.ImageField()
+    image = AjaxImageField(upload_to='thumbnails',
+                           max_height=200,  # optional
+                           max_width=200,  # optional
+                           crop=True)  # optional
     created = models.DateTimeField(auto_now_add=True)

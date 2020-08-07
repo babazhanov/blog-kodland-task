@@ -40,8 +40,11 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'material',
+    'ajaximage',
     'post'
 ]
+
+AJAXIMAGE_AUTH_TEST = lambda u: True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
