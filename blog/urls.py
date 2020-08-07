@@ -19,11 +19,14 @@ from django.views.generic import RedirectView
 from django.conf.urls.static import static
 
 from blog import settings
-from post.views import PostListView
+from post.views import PostListView, PostDetailView, PostCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', PostListView.as_view(), name="home"), 
+    path('', PostListView.as_view(), name="home"),
+
+    path('detail/<int:pk>/', PostDetailView.as_view(), name="post-detail"),
+    path('add/', PostCreateView.as_view(), name="post-add"),
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

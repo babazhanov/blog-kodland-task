@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>Блог</title>
-    <link rel="stylesheet" href="{% static 'css/margins.css' %}">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     {% include 'material/includes/material_css.html' %}
     {% include 'material/includes/material_js.html' %}
@@ -31,7 +30,7 @@
             <img src="{% static 'images/logo.png' %}" style="width: 180px; height: 50px; margin-top: 10px;"/>
             <span style="color: black; position: absolute;">Блог</span>
         </a>
-        <a class="btn right blue darken-1" style="margin-top: 12px;" href="#!">+ Добавить статью</a>
+        <a class="btn right blue darken-1" style="margin-top: 12px;" href="{% url 'post-add' %}">+ Добавить статью</a>
       <ul class="right hide-on-med-and-down">
           <li><a href="/admin">Вход</a></li>
       </ul>

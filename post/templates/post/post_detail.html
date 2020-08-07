@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+<div class="col s6 offset-s3">
+    <h2 class="blue-text text-darken-2">{{object.title}}</h2>
+    <img src="{{object.image.url}}" style="width: 100%;">
+    <div>{{object.content|safe}}</div>
+</div>
+</div>
+
+
+{% endblock %}

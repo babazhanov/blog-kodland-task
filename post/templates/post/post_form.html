@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="blue-text text-darken-2">Добавить статью</h2>
+<div class="row">
+<form action="/add/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Опубликовать</button>
+</form>
+
+</div>
+
+{% endblock %}
