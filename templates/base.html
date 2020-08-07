@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Блог</title>
+    <link rel="stylesheet" href="{% static 'css/margins.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    {% include 'material/includes/material_css.html' %}
+    {% include 'material/includes/material_js.html' %}
+    <style>
+        .nav-background-class {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+
+</head>
+<body>
+
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo" style="white-space: nowrap">Блог</a>
+      <ul class="right hide-on-med-and-down">
+          <li><a href="/admin">Вход</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+
+          <li><div class="user-view">
+          <div class="nav-background-class">
+            <img src="{% static 'images/nav-background.jpg' %}">
+          </div>
+          <a href="#user"><img class="circle" src="{% static 'images/default-profile.png' %}"></a>
+          <a href="#name"><span class="white-text name">Имя</span></a>
+          <a href="#email"><span class="white-text email">Почта</span></a>
+        </div></li>
+        <li><a href="/"><i class="material-icons">home</i>Домой</a></li>
+        <li><a href="#!">Ссылка</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Заголовок</a></li>
+        <li><a class="waves-effect" href="/admin">Вход</a></li>
+
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+<div class="container">
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+
+<script>
+(function($){
+  $(function(){
+
+    $('.sidenav').sidenav();
+
+  }); // end of document ready
+})(jQuery); // end of jQuery name space
+</script>
+
+</body>
+</html>
