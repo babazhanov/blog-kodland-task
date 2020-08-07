@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import DetailView, CreateView
 from django.views.generic.list import ListView
+
+from post.forms import PostForm
 from .models import Post
 
 
@@ -13,6 +15,20 @@ class PostDetailView(DetailView):
     model = Post
 
 
-class PostCreateView(CreateView):
-    model = Post
-    fields = ['title', 'content', 'image']
+def add_post(request):
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            cleaned_data = form.cleaned_data
+            post = Post()
+            post.title = cleaned_data['title']
+            post.content = cleaned_data['content']
+            post.image = cleaned_data['image']
+            post.save()
+            return redirect('post-detail', pk=post.pk)
+    else:
+        form = PostForm(request.FILES)
+
+    return render(request, 'post/post_form.html', {'form': form})
+
+
