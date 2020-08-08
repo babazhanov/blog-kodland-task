@@ -14,8 +14,16 @@ class Post(models.Model):
 
     title = models.CharField(max_length=256)
     content = RichTextField()
-    image = AjaxImageField(upload_to='thumbnails',
+    image = AjaxImageField(upload_to='uploads',
                            max_height=200,  # optional
                            max_width=200,  # optional
-                           crop=True)  # optional
+                           crop=True,  # optional
+                           null=True,
+                           blank=True)
     created = models.DateTimeField(auto_now_add=True)
+
+    def get_image(self):
+        if self.image and self.image.url and len(self.image.url) > 0:
+            return self.image.url
+        else:
+            return '/media/robot.png'
