@@ -147,3 +147,9 @@ CKEDITOR_CONFIGS = {
         ]
     },
 }
+
+
+# Должно быть в конце файла
+if 'HEROKU' in os.environ:
+    import django_heroku
+    django_heroku.settings(locals())
