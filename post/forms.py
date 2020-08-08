@@ -11,4 +11,4 @@ class PostForm(forms.Form):
     title = forms.CharField(label='Заголовок', max_length=100,
                             widget=forms.TextInput(attrs={'placeholder': 'Введите название статьи'}))
     content = forms.CharField(widget=CKEditorWidget, label='Текст статьи')
-    image = forms.CharField(widget=AjaxImageWidget(upload_to='uploads'))
+    image = forms.CharField(widget=AjaxImageWidget(upload_to='uploads'), required=False)
