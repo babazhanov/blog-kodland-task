@@ -13,7 +13,7 @@
             скептическую улыбку и какие полезные навыки приобретают ребята, изучая программирование.
         </div>
 
-        <a class="btn blue darken-2" style="margin-top: 20px;">Читать</a>
+        <a href="{% url 'post-detail' 14 %}" class="btn blue darken-2" style="margin-top: 20px;">Читать</a>
     </div>
 
     <div class="col s5">
@@ -39,7 +39,7 @@
             {% if page_obj.number == i %}
                 <li class="active"><a href="#">{{i}}</a></li>
             {% else %}
-                <li class="waves-effect"><a href="{% url 'post-list'%}?page={{i}}">{{i}}</a></li>
+                <li class="waves-effect"><a href="{% url 'post-list' %}?page={{i}}">{{i}}</a></li>
             {% endif %}
         {% endfor %}
         {% if page_obj.has_next %}
