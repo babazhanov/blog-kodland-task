@@ -3,3 +3,4 @@ django-ckeditor
 django-material
 Pillow
 django-heroku
+gunicorn
