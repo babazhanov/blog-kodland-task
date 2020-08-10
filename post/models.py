@@ -8,6 +8,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = "Статья"
         verbose_name_plural = "Статья"
+        #ordering = ['id']
 
     def __str__(self):
         return self.title
@@ -15,8 +16,5 @@ class Post(models.Model):
     title = models.CharField(max_length=256)
     content = RichTextField()
     image = AjaxImageField(upload_to='uploads',
-                           max_height=200,  # optional
-                           max_width=200,  # optional
-                           crop=True,  # optional
                            default="robot.png",)
     created = models.DateTimeField(auto_now_add=True)
