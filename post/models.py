@@ -1,4 +1,5 @@
 from ckeditor.fields import RichTextField
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db import models
 
 from ajaximage.fields import AjaxImageField
@@ -25,4 +26,4 @@ class Post(models.Model):
         if self.image and self.image.url and len(self.image.url) > 0:
             return self.image.url
         else:
-            return '/media/robot.png'
+            return static('uploads/robot.png')

@@ -59,10 +59,10 @@
         <a href="{% url 'post-detail' obj.pk %}">
         <div class="card white"><div class="card-content" style="height: 320px;">
                 <div class="grey-text">{{obj.created}}</div>
-                <div class="center" style="">
-                    <img src="{{obj.get_image}}" style="width:100%; max-width:280px; height:auto; vertical-align: middle;" />
+                <div class="center" style="height: 190px;">
+                    <span style="display: inline-block; height: 100%; vertical-align: middle;"></span><img src="{{obj.get_image}}" style="width:100%; max-width:280px; height:auto; vertical-align: middle;" />
                 </div>
-                <h6 class="blue-text text-darken-2 center" style="position: absolute; bottom:0; left: 50%; transform: translateX(-50%);">{{obj.title}}</h6>
+                <h6 class="blue-text text-darken-2 center" style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%);">{{obj.title}}</h6>
             </div></div>
         </a>
     </div>
