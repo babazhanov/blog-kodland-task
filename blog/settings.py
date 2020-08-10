@@ -156,7 +156,7 @@ AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'blog-kodland.herokuapp.com'
 AWS_S3_CUSTOM_DOMAIN = "s3.eu-west-2.amazonaws.com/%s" % (AWS_STORAGE_BUCKET_NAME, )
-AWS_DEFAULT_ACL = None
+AWS_DEFAULT_ACL = 'public-read'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -176,3 +176,4 @@ if 'HEROKU' in os.environ:
     import dj_database_url
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
+
