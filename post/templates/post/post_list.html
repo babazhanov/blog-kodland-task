@@ -5,21 +5,20 @@
 {% load static %}
 
 <div class="row">
-    <div class="col s7">
+    <div class="col m12 s12 l7">
         <h5 class="pink-text">NEW</h5>
-        <h2 class="blue-text text-darken-2">Почему подросткам стоит изучать программирование?</h2>
+        <h3 class="blue-text text-darken-2">Почему подросткам стоит изучать программирование?</h3>
         <div>
             Объясняем почему словосочетание «программирование для подростков» не должно вызывать
             скептическую улыбку и какие полезные навыки приобретают ребята, изучая программирование.
         </div>
-
-        <a href="{% url 'post-detail' 1 %}" class="btn blue darken-2" style="margin-top: 20px;">Читать</a>
     </div>
 
-    <div class="col s5">
-        <img style="margin-top: 20px;" src="{% static 'images/robot-books.png' %}" />
+    <div class="col m12 s12 l5">
+        <img style="width: 100%; margin-top: 20px;" src="{% static 'images/robot-books.png' %}" />
     </div>
 </div>
+<div class="row"><a href="{% url 'post-detail' 1 %}" class="btn blue darken-2" style="margin-top: 20px;">Читать</a></div>
 
 <hr>
 
@@ -56,14 +55,14 @@
 {% if forloop.counter0|divisibleby:"3" %}
     <div class="row">
 {% endif %}
-    <div class="col s4">
+    <div class="col m12 l4">
         <a href="{% url 'post-detail' obj.pk %}">
         <div class="card white"><div class="card-content" style="height: 320px;">
                 <div class="grey-text">{{obj.created}}</div>
-                <div class="center" style="height: 200px;">
-                    <img src="{{obj.get_image}}" style="max-width:200px; height:auto; vertical-align: middle;" />
+                <div class="center" style="">
+                    <img src="{{obj.get_image}}" style="width:100%; max-width:280px; height:auto; vertical-align: middle;" />
                 </div>
-                <h6 class="blue-text text-darken-2 center">{{obj.title}}</h6>
+                <h6 class="blue-text text-darken-2 center" style="position: absolute; bottom:0; left: 50%; transform: translateX(-50%);">{{obj.title}}</h6>
             </div></div>
         </a>
     </div>
