@@ -1,8 +1,9 @@
-dj-config-url
 django==2.2
 django-ckeditor
 django-material
+dj-config-url
 Pillow
 django-heroku
 gunicorn
 whitenoise
+django-storages
